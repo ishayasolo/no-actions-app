@@ -90,6 +90,13 @@ function App() {
           controlsList="nodownload"
         ></video>
       </div>
+
+      <br />
+
+      <p style={{ lineHeight: '1.5', fontWeight: 'bold' }}>
+        PS: right-click is also disabled on the entire page, to prevent the user
+        from accessing the page options
+      </p>
     </div>
   );
 }
