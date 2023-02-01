@@ -3,7 +3,6 @@ import ReactPlayer from 'react-player';
 import Image from './components/Image';
 import NoHighlight from './components/NoHighlight';
 import Paragraph from './components/Paragraph';
-import video from './assets/teddys-tale.mp4';
 
 function App() {
   const [images, setImages] = useState([]);
