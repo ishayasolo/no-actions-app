@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from './components/Image';
 import NoHighlight from './components/NoHighlight';
 import Paragraph from './components/Paragraph';
 
 function App() {
   const [images, setImages] = useState([]);
+  const textRef = useRef(null);
   useEffect(() => {
     fetch('https://api.thecatapi.com/v1/images/search?limit=6', {
       headers: {
@@ -25,8 +25,17 @@ function App() {
     event.preventDefault();
   };
 
+  const handleCopy = event => {
+    event.preventDefault();
+    alert('Copying text is not allowed!');
+  };
+
   return (
-    <div style={{ padding: '16px', maxWidth: '600px' }}>
+    <div
+      ref={textRef}
+      onCopy={handleCopy}
+      style={{ padding: '16px', maxWidth: '600px' }}
+    >
       <h2 style={{ lineHeight: '1.5' }}>
         You can highlight the text below but you can't copy any of it's content
       </h2>
